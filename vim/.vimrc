@@ -1,32 +1,32 @@
 call plug#begin('~/.vim/plugged')
 
+" Color Themes
 Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
+
+Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator' " Better navigation integration with tmux
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs' " Bracket pairs
 
 Plug 'scrooloose/nerdcommenter' " Comment fast
-Plug 'davidhalter/jedi-vim' 
+Plug 'davidhalter/jedi-vim' "Python autocomplete
 Plug 'terryma/vim-multiple-cursors' " Multiple cursors like sublime
 
-Plug 'frazrepo/vim-rainbow'
+Plug 'frazrepo/vim-rainbow' " Rainbow brackets
 
-Plug 'dense-analysis/ale'
-"Plug 'vim-airline/vim-airline'
+Plug 'dense-analysis/ale' " Syntax checker
+Plug 'vim-airline/vim-airline' " Status bar
 
 Plug 'pangloss/vim-javascript'
-
-Plug 'Townk/im-autoclose'
-
 
 call plug#end()
 
@@ -36,13 +36,16 @@ let g:ale_sign_column_always = 1
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gf <Plug>(coc-references)
+nnoremap <C-i> :GFiles<CR>
+
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 let g:airline_powerline_fonts = 1
 
@@ -93,8 +96,6 @@ inoremap {<CR> {<CR>}<C-o>O
 inoremap (<CR> (<CR>)<C-o>O
 
 set autoindent   " Copy indent from current line when starting a new line
-set ignorecase   " case-insensitive search
-set smartcase    " but case-sensitive if expression contains a capital letter
 
 " clear highlights
 nnoremap <leader><space> :noh<CR>
@@ -104,11 +105,7 @@ map gb :tabp<CR>
 inoremap {<CR> {<CR>}<C-o>O
 inoremap (<CR> (<CR>)<C-o>O
 
-nnoremap <silent> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
-
 nnoremap <silent> <C-p> :FZF<CR>
-" find file under HOME directory
-nnoremap <silent> <C-P> :FZF ~<CR> 
 
 nnoremap \ :Ag<space>
 
@@ -119,11 +116,11 @@ nnoremap <S-k> ddkkp
 " open new split panes to right and below
 set splitright
 set splitbelow
-" turn terminal to normal mode with escape
+" turn terminal to normal mode with jk
 tnoremap jk <C-\><C-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-" open terminal on ctrl+n
+" open terminal on ctrl+x
 function! OpenTerminal()
   split term://zsh
   resize 10
@@ -160,3 +157,6 @@ set autoread " Automatically re-read files changed outside of vim
 set nofoldenable " Disable folding
 
 nnoremap <silent> <leader>o :All<cr>
+
+nnoremap <silent> <leader>gb :Git blame<CR>
+nnoremap <silent> <leader>g :Git <CR>
