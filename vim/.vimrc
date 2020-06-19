@@ -108,8 +108,16 @@ nnoremap <leader><space> :noh<CR>
 map gb :tabp<CR>
 
 " move line down/up
-nnoremap <S-j> ddp
-nnoremap <S-k> ddkkp
+" nnoremap <S-j> ddp
+" nnoremap <S-k> ddkkp
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+
+inoremap <S-j> <Esc>:m .+1<CR>==gi
+inoremap <S-k> <Esc>:m .-2<CR>==gi
+
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " open new split panes to right and below
 set splitright
@@ -124,16 +132,6 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <C-x> :call OpenTerminal()<CR>
-
-" use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
 
 " mapleader config
 map <Space> <Nop>
