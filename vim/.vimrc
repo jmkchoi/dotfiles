@@ -91,10 +91,9 @@ set incsearch    " highlight matches as you type
 set hlsearch     " highlight matches
 
 :imap jk <Esc>
-:set mouse=a "mouse support
+:set mouse=a " mouse support
 inoremap {<CR> {<CR>}<C-o>O
-inoremap (<CR> (<CR>)<C-o>O
-
+set clipboard+=unnamedplus " Use clipboard for all yank operations
 set autoindent   " Copy indent from current line when starting a new line
 
 " clear highlights
@@ -102,10 +101,9 @@ nnoremap <leader><space> :noh<CR>
 
 map gb :tabp<CR>
 
-inoremap {<CR> {<CR>}<C-o>O
-inoremap (<CR> (<CR>)<C-o>O
-
 nnoremap <silent> <C-p> :FZF<CR>
+" π = option - p
+nnoremap <silent> π :FZF ~<CR>
 
 nnoremap \ :Ag<space>
 
@@ -159,4 +157,29 @@ set nofoldenable " Disable folding
 nnoremap <silent> <leader>o :All<cr>
 
 nnoremap <silent> <leader>gb :Git blame<CR>
-nnoremap <silent> <leader>g :Git <CR>
+nnoremap <silent> <leader>g :Git<CR>
+nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+
+" Select the last edited/pasted text
+nmap gv `[v`]
+
+" Clear screen clears search highlighting.
+nnoremap <C-L> :nohl<CR><C-L>
+
+" <esc> in normal mode clears highlight
+nnoremap <silent> <esc> :noh<cr><esc>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap <silent> <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
