@@ -38,9 +38,15 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gf <Plug>(coc-references)
-nnoremap <C-i> :GFiles<CR>
 
+nnoremap <C-i> :GFiles<CR>
 nnoremap <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :FZF<CR>
+" π = option - p
+nnoremap <silent> π :FZF ~<CR>
+
+nnoremap \ :Ag<space>
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -100,12 +106,6 @@ set autoindent   " Copy indent from current line when starting a new line
 nnoremap <leader><space> :noh<CR>
 
 map gb :tabp<CR>
-
-nnoremap <silent> <C-p> :FZF<CR>
-" π = option - p
-nnoremap <silent> π :FZF ~<CR>
-
-nnoremap \ :Ag<space>
 
 " move line down/up
 nnoremap <S-j> ddp
