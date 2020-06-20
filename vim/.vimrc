@@ -124,6 +124,8 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
 
+let g:AutoPairsMapCh = '<C-S-H>'
+
 " open new split panes to right and below
 set splitright
 set splitbelow
