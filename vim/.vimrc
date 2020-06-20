@@ -96,7 +96,7 @@ set ruler        " show cursor position
 set incsearch    " highlight matches as you type
 set hlsearch     " highlight matches
 
-:imap jk <Esc>
+:imap jk <Esc><Esc>
 :set mouse=a " mouse support
 inoremap {<CR> {<CR>}<C-o>O
 set clipboard+=unnamedplus " Use clipboard for all yank operations
@@ -121,6 +121,8 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
 
 " open new split panes to right and below
 set splitright
