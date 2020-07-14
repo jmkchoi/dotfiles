@@ -27,6 +27,7 @@ Plug 'dense-analysis/ale' " Syntax checker
 Plug 'vim-airline/vim-airline' " Status bar
 
 Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -100,12 +101,10 @@ set hlsearch     " highlight matches
 :set mouse=a " mouse support
 inoremap {<CR> {<CR>}<C-o>O
 set clipboard+=unnamedplus " Use clipboard for all yank operations
-set autoindent   " Copy indent from current line when starting a new line
+set backspace=indent,eol,start "intuitive backspacing"
 
 " clear highlights
 nnoremap <leader><space> :noh<CR>
-
-map gb :tabp<CR>
 
 " move line down/up
 " nnoremap <S-j> ddp
@@ -169,7 +168,7 @@ nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 nmap gv `[v`]
 
 " Clear screen clears search highlighting.
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <esc> :noh<return><esc>
 
 " <esc> in normal mode clears highlight
 nnoremap <silent> <esc> :noh<cr><esc>
@@ -188,3 +187,5 @@ endif
 
 " bind K to grep word under cursor
 nnoremap <silent> <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.ts,*.tsx'
