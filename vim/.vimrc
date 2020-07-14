@@ -3,31 +3,44 @@ call plug#begin('~/.vim/plugged')
 " Color Themes
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ajh17/Spacegray.vim'
+Plug 'chriskempson/base16-vim'
 
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator' " Better navigation integration with tmux
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'ap/vim-css-color' "Displays a preview of colors with CSS
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'jiangmiao/auto-pairs' " Bracket pairs
 
 Plug 'scrooloose/nerdcommenter' " Comment fast
-Plug 'davidhalter/jedi-vim' "Python autocomplete
 Plug 'terryma/vim-multiple-cursors' " Multiple cursors like sublime
 
 Plug 'frazrepo/vim-rainbow' " Rainbow brackets
 
+Plug 'davidhalter/jedi-vim' "Python autocomplete
 Plug 'dense-analysis/ale' " Syntax checker
+Plug 'sheerun/vim-polyglot'
+
 Plug 'vim-airline/vim-airline' " Status bar
 
-Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -70,6 +83,13 @@ endif
 syntax enable
 colorscheme onedark
 
+map <F1> :colorscheme onedark<CR>
+map <F2> :colorscheme base16-default-dark<CR>
+map <F3> :colorscheme hybrid_reverse<CR>
+map <F4> :colorscheme PaperColor<CR>
+map <F5> :colorscheme spacegray<CR>
+map <F6> :colorscheme gruvbox<CR>
+
 set number
 highlight LineNr ctermfg=DarkGrey
 highlight Normal ctermbg=None
@@ -80,6 +100,11 @@ set tabstop=2    " global tab width
 set shiftwidth=2
 set expandtab    " use spaces instead of tabs
 set laststatus=2 " Always show a status line
+set autoindent
+filetype plugin indent on  "Enabling Plugin & Indent
+syntax on  "Turning Syntax on
+set spell spelllang=en_us
+set backspace=indent,eol,start confirm
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -101,7 +126,6 @@ set hlsearch     " highlight matches
 :set mouse=a " mouse support
 inoremap {<CR> {<CR>}<C-o>O
 set clipboard+=unnamedplus " Use clipboard for all yank operations
-set backspace=indent,eol,start "intuitive backspacing"
 
 " clear highlights
 nnoremap <leader><space> :noh<CR>
@@ -188,4 +212,4 @@ endif
 " bind K to grep word under cursor
 nnoremap <silent> <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.ts,*.tsx'
+"let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.ts,*.tsx'
