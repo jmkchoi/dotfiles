@@ -1,0 +1,35 @@
+{
+    "vim.leader": "<space>",
+    "editor.minimap.enabled": false,
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    // INSERT MODE
+    "vim.insertModeKeyBindings": [
+        {
+          "before": ["j", "k"],
+          "after": ["<Esc>"]
+        }
+      ],
+    // VISUAL MODE
+    "vim.visualModeKeyBindings": [
+        {
+          "before": ["i"],
+          "after": ["<Esc>", "i"]
+        }
+      ],
+        "vim.handleKeys": {
+        "<C-d>": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "jade"
+    },
+    "workbench.colorTheme": "One Dark Theme"
+}

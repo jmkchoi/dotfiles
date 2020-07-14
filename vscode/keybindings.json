@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+j",
+        "command": "cursorDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorUp",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",  // same as downarrow
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",  // same as uparrow
+         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+       },
+    {
+        "key": "ctrl+h",
+        "command": "cursorLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "cursorRight",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "actions.find"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction"
+    },
+    {
+        "key" : "ctrl+o",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "extension.changeCase.commands"
+    }
+]
