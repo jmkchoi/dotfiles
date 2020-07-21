@@ -1,35 +1,73 @@
 {
-    "vim.leader": "<space>",
-    "editor.minimap.enabled": false,
-    "vim.useCtrlKeys": true,
-    "vim.useSystemClipboard": true,
-    // INSERT MODE
-    "vim.insertModeKeyBindings": [
-        {
-          "before": ["j", "k"],
-          "after": ["<Esc>"]
-        }
-      ],
-    // VISUAL MODE
-    "vim.visualModeKeyBindings": [
-        {
-          "before": ["i"],
-          "after": ["<Esc>", "i"]
-        }
-      ],
-        "vim.handleKeys": {
-        "<C-d>": true
+  "vim.leader": "<space>",
+  "editor.minimap.enabled": false,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  // INSERT MODE
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  // VISUAL MODE
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["i"],
+      "after": ["<Esc>", "i"]
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<Tab>"],
+      "after": [">", "g", "v"]
     },
-    "prettier.singleQuote": true,
-    "prettier.jsxSingleQuote": true,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "vue-html": "html",
-        "razor": "html",
-        "plaintext": "jade"
+    {
+      "before": ["Shift+Tab"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+  // NORMAL MODE
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<Tab>"],
+      "after": [">", ">"]
     },
-    "workbench.colorTheme": "One Dark Theme"
+    {
+      "before": ["Shift+Tab"],
+      "after": ["<", "<"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-d>": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "razor": "html",
+    "plaintext": "jade"
+  },
+  "workbench.colorTheme": "One Dark Theme",
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/node_modules/": true
+  },
+  "search.exclude": {
+    "**/node_modules/": true,
+    "**/tmp": true
+  },
+  "editor.renderLineHighlight": "none",
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "files.insertFinalNewline": true,
+  "editor.fontSize": 11.5,
+  "window.zoomLevel": 0,
+  "json.schemas": []
 }

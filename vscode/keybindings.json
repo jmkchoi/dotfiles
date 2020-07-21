@@ -1,53 +1,93 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+j",
-        "command": "cursorDown",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "cursorUp",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "selectNextSuggestion",  // same as downarrow
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "selectPrevSuggestion",  // same as uparrow
-         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-       },
-    {
-        "key": "ctrl+h",
-        "command": "cursorLeft",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "cursorRight",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+f",
-        "command": "actions.find"
-    },
-    {
-        "key": "alt+j",
-        "command": "editor.action.moveLinesDownAction"
-    },
-    {
-        "key": "alt+k",
-        "command": "editor.action.moveLinesUpAction"
-    },
-    {
-        "key" : "ctrl+o",
-        "command": "workbench.view.explorer"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "extension.changeCase.commands"
-    }
+  {
+    "key": "ctrl+j",
+    "command": "cursorDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion", // same as downarrow
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion", // same as uparrow
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "cursorLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "cursorRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.moveEditorToFirstGroup"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "actions.find"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "extension.changeCase.commands"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "bracket-pair-colorizer.expandBracketSelection"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  }
 ]
