@@ -69,5 +69,6 @@
   "files.insertFinalNewline": true,
   "editor.fontSize": 11.5,
   "window.zoomLevel": 0,
-  "json.schemas": []
+  "json.schemas": [],
+  "editor.tabSize": 2
 }

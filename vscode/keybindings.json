@@ -89,5 +89,31 @@
     "key": "ctrl+p",
     "command": "workbench.action.closeQuickOpen",
     "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.closeSidebar",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "keyj": "ctrl+f",
+    "command": "explorer.newFolder",
+    "when": "listFocus && !inputFocus",
+    "key": "cmd+n"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "deleteFile",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+space",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   }
 ]
