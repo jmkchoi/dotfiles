@@ -117,3 +117,5 @@ alias vifi='vim $(fzf)'
 alias vim=nvim
 
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
+export PATH=${PATH}:/usr/local/mysql/bin/
