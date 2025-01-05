@@ -14,3 +14,22 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+
+export PATH="/opt/homebrew/bin:$PATH"
+alias pip=pip3
+alias python=python3
+
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+
+eval "$(fzf --zsh)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
