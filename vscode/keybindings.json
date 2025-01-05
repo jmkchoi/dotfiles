@@ -96,10 +96,9 @@
     "when": "listFocus && !inputFocus"
   },
   {
-    "keyj": "ctrl+f",
+    "key": "cmd+n",
     "command": "explorer.newFolder",
-    "when": "listFocus && !inputFocus",
-    "key": "cmd+n"
+    "when": "listFocus && !inputFocus"
   },
   {
     "key": "ctrl+n",
@@ -115,5 +114,28 @@
     "key": "shift+space",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }
+  },
+  {
+    "command": "editor.action.changeAll",
+    "key": "ctrl+r",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "ctrl+escape",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  { "key": "cmd+shift+t", "command": "phpunit.Test", "when": "editorFocus" }
 ]
